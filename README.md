@@ -88,6 +88,7 @@ Gracias a todos mis clientes por confiar en mí para sus proyectos web. Su feedb
 Este portafolio está construido sobre una plantilla HTML/CSS de código abierto que fue personalizada y adaptada para mis necesidades. Si estás interesado en usar esta misma plantilla como base para tu propio portafolio, puedes clonar este repositorio:
 
 ```bash
+cd Downloads
 git clone https://github.com/lazzzarito/Portfolio.git
 ```
 
