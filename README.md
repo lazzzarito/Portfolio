@@ -9,11 +9,11 @@ Portafolio personal de **Lazarito**, diseñador y desarrollador web con más de 
 Soy un **diseñador UI/UX y desarrollador frontend** especializado en crear interfaces intuitivas, estéticas y de alto rendimiento. Mi experiencia radica en fusionar el diseño moderno con código limpio, optimizado y responsivo.
 
 ### Especialidades:
-- **Diseño de Interfaces (UI/UX)** - Creando experiencias visuales impactantes
-- **Desarrollo Frontend** - HTML, CSS, JavaScript, PHP
-- **Sitios web responsivos** - Adaptables a cualquier dispositivo
-- **Revitalización de webs** - Modernizando proyectos obsoletos
-- **No-Code Solutions** - Herramientas avanzadas: Wordpress, Webflow, Figma
+- 🎨 **Diseño de Interfaces (UI/UX)** - Creando experiencias visuales impactantes
+- 💻 **Desarrollo Frontend** - HTML, CSS, JavaScript, PHP
+- 📱 **Sitios web responsivos** - Adaptables a cualquier dispositivo
+- 🔄 **Revitalización de webs** - Modernizando proyectos obsoletos
+- ⚙️ **No-Code Solutions** - Herramientas avanzadas: Wordpress, Webflow, Figma
 
 ## 💼 Estadísticas
 
@@ -28,16 +28,16 @@ Soy un **diseñador UI/UX y desarrollador frontend** especializado en crear inte
 ## 🛠️ Habilidades Técnicas
 
 ### Desarrollo Frontend
-- **HTML + CSS + JavaScript + PHP** - 95%
-- **Responsive Design** - 99%
-- **Performance Optimization** - 90%
+- 📝 **HTML + CSS + JavaScript + PHP** - 95%
+- 📱 **Responsive Design** - 99%
+- ⚡ **Performance Optimization** - 90%
 
 ### Herramientas y Plataformas
-- **WordPress & CMS** - 99%
-- **WooCommerce & Shopify** - 90%
-- **Figma + Webflow + Framer** - 90%
-- **Bases de datos y Deployments** - 80%
-- **IA Development** - 60%
+- 📘 **WordPress & CMS** - 99%
+- 🛍️ **WooCommerce & Shopify** - 90%
+- 🎨 **Figma + Webflow + Framer** - 90%
+- 🗄️ **Bases de datos y Deployments** - 80%
+- 🤖 **IA Development** - 60%
 
 ## 🎨 Características
 
@@ -50,69 +50,21 @@ Soy un **diseñador UI/UX y desarrollador frontend** especializado en crear inte
 
 ## 🚀 Proyectos Destacados
 
-### 1. **Lizt Alfonso Dance Cuba**
-Plataforma para una compañía y escuela de danza profesional.
-- **Tipo**: Compañía y Escuela
-- **URL**: [liztalfonso.com](https://liztalfonso.com)
+| | | |
+|---|---|---|
+| **[Lizt Alfonso Dance Cuba](https://liztalfonso.com)** 💃<br/>Plataforma para una compañía y escuela de danza profesional. | **[Bienestar Animal Cuba](https://bacuba.org/)** 🐾<br/>Sitio web para organización sin fines de lucro. | **[Alexs Gold Joyería](https://alexsgoldjoyeria.com/)** 💎<br/>E-commerce y branding para joyería premium. |
+| **[El Toque de Oro](https://eltoquedeoro.com/)** 💰<br/>Plataforma de servicios financieros e inversiones. | **[Freshabana](https://freshabana.com/)** 🛒<br/>Plataforma de e-commerce especializada. | **[Despacho Larrea](https://seashell-starling-913564.hostingersite.com/)** ⚖️<br/>Plataforma legal impulsada por IA. |
 
-### 2. **Bienestar Animal Cuba**
-Sitio web para organización sin fines de lucro dedicada al bienestar animal.
-- **Tipo**: ONG
-- **URL**: [bacuba.org](https://bacuba.org/)
-
-### 3. **Alexs Gold Joyería**
-E-commerce y branding para joyería premium.
-- **Tipo**: Joyería y Marca
-- **URL**: [alexsgoldjoyeria.com](https://alexsgoldjoyeria.com/)
-
-### 4. **El Toque de Oro**
-Plataforma de servicios financieros e inversiones.
-- **Tipo**: Finanzas e Inversiones
-- **URL**: [eltoquedeoro.com](https://eltoquedeoro.com/)
-
-### 5. **Freshabana**
-Plataforma de e-commerce especializada.
-- **Tipo**: E-commerce
-- **URL**: [freshabana.com](https://freshabana.com/)
-
-### 6. **Despacho Larrea**
-Plataforma legal impulsada por inteligencia artificial.
-- **Tipo**: Legal Tech + IA
-- **URL**: [seashell-starling-913564.hostingersite.com](https://seashell-starling-913564.hostingersite.com/)
-
-## 💻 Tecnologías Utilizadas
-
-```
-Frontend:
-- HTML5
-- CSS3 (Responsive, Grid, Flexbox)
-- JavaScript (ES6+)
-- PHP
-
-Herramientas y Frameworks:
-- WordPress
-- Figma
-- Webflow
-- Framer
-- Shopify
-- WooCommerce
-```
 
 ## 🎯 Servicios Ofrecidos
 
-- **Diseño Web Personalizado** - Sitios únicos y adaptados a tu marca
-- **Desarrollo Frontend** - Código limpio y optimizado
-- **Revitalización de Webs** - Modernizar y mejorar sitios existentes
-- **Diseño UI/UX** - Interfaces intuitivas y atractivas
-- **Consultoría Técnica** - Asesoramiento en proyectos web
-- **No-Code Solutions** - Soluciones rápidas con herramientas avanzadas
+- 🎨 **Diseño Web Personalizado** - Sitios únicos y adaptados a tu marca
+- 💻 **Desarrollo Frontend** - Código limpio y optimizado
+- 🔄 **Revitalización de Webs** - Modernizar y mejorar sitios existentes
+- ✨ **Diseño UI/UX** - Interfaces intuitivas y atractivas
+- 💡 **Consultoría Técnica** - Asesoramiento en proyectos web
+- ⚙️ **No-Code Solutions** - Soluciones rápidas con herramientas avanzadas
 
-## 📱 Compatibilidad
-
-- ✅ Chrome, Firefox, Safari, Edge
-- ✅ Dispositivos móviles (iPhone, Android)
-- ✅ Tablets
-- ✅ Escritorio
 
 ## 📞 Contacto
 
