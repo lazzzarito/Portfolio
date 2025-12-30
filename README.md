@@ -21,7 +21,7 @@ Soy un **diseñador UI/UX y desarrollador frontend** especializado en crear inte
 | --------------------------- | ------------ |
 | **Años de Experiencia**     | +10 años     |
 | **Proyectos Completados**   | 27 proyectos |
-| **Clientes Satisfechos**    | 99%          |
+| **Clientes Satisfechos**    | 90%          |
 | **Proyectos en Desarrollo** | 23           |
 | **Disponibilidad**          | 100%         |
 
