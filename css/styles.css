@@ -3807,6 +3807,97 @@ img.u-pull-left {
     transform: scale(1.2);
 }
 
+.folio-list-text {
+    list-style: none;
+    margin: var(--vspace-4) 0 var(--vspace-1);
+    padding: 0;
+    display: grid;
+    gap: var(--vspace-2);
+}
+
+.folio-list-text__item {
+    margin-bottom: 0;
+}
+
+.folio-list-text__link {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: var(--vspace-1);
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    padding: var(--vspace-1_5) var(--vspace-1_5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+}
+
+.folio-list-text__link:hover,
+.folio-list-text__link:focus {
+    color: var(--color-1);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.folio-list-text__icon {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.folio-list-text__icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.folio-list-text__content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.folio-list-text__cat {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: var(--vspace-0_75);
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.folio-list-text__title {
+    font-family: var(--font-1);
+    font-weight: 500;
+    font-size: var(--text-lg);
+    line-height: var(--vspace-1);
+}
+
+.folio-list-text__desc {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.6;
+    margin-top: 0.35rem;
+    max-width: 42rem;
+}
+
+@media screen and (min-width: 900px) {
+    .folio-list-text {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .folio-list-text {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--vspace-2_5);
+    }
+}
+
+/* No responsive overrides for the text-only works list; maintains the same icon-left listing across devices */
+
 /* ------------------------------------------------------------------- 
  * ## modal popup
  * ------------------------------------------------------------------- */
