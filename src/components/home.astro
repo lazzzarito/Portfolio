@@ -57,14 +57,22 @@ const profileImage = await resolveAssetImage(photoUrl);
             src={profileImage}
             alt={name}
             class="w-full h-full object-cover scale-110"
+            width={192}
+            height={192}
             loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            sizes="(max-width: 768px) 80px, 96px"
           />
         ) : (
           <img
             src={photoUrl || "/placeholder.jpeg"}
             alt={name}
             class="w-full h-full object-cover scale-110 fallback-img"
+            width={96}
+            height={96}
             loading="eager"
+            decoding="async"
           />
         )
       }
@@ -76,7 +84,7 @@ const profileImage = await resolveAssetImage(photoUrl);
   </div>
 
   <div class="reveal-content" style="animation-delay: 200ms;">
-    <p class="font-body font-light text-subtext leading-relaxed">Hello, I'm</p>
+    <h2 class="font-body font-light text-subtext leading-relaxed text-base">Hello, I'm</h2>
   </div>
 
   <div
@@ -97,7 +105,7 @@ const profileImage = await resolveAssetImage(photoUrl);
 
   <div class="mt-8 mb-4 reveal-content" style="animation-delay: 400ms;">
     <a
-      href="/#services"
+      href="#services"
       class="group relative inline-flex items-center justify-center px-10 py-2 border border-accent/20 rounded-full text-maintext font-body transition-all duration-300 hover:border-accent/60 hover:bg-accent/5 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-accent)_15%,transparent)] hover:scale-105"
     >
       <div class="flex flex-col items-center justify-center text-center">
@@ -131,14 +139,17 @@ const profileImage = await resolveAssetImage(photoUrl);
           <a
             href={social.url}
             target="_blank"
+            rel="noopener noreferrer"
             class="group relative flex flex-col items-center justify-center transition-all duration-300 hover:scale-110"
+            aria-label={social.name}
           >
             <Icon
               name={social.icon}
               class="w-8 h-8 text-maintext group-hover:text-accent transition-colors duration-300"
+              aria-hidden="true"
             />
 
-            <span class="absolute -bottom-6 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 text-xs text-accent font-body">
+            <span class="absolute -bottom-6 scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 text-xs text-accent font-body" aria-hidden="true">
               {social.name}
             </span>
           </a>

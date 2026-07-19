@@ -203,6 +203,34 @@ const navItems: NavItem[] = [
       tech: "Tech Stack",
       contact: "Contact",
     };
+    const descMap: Record<string, string> = {
+      home: "Portfolio of 1azarito — Web developer specializing in frontend development, UI/UX design, and site fixes. I build fast, clean websites.",
+      services: "Web development services by 1azarito — custom builds, frontend dev, site fixes, UI/UX design, technical consulting, and no-code solutions.",
+      projects: "Featured projects by 1azarito — real client work including brand sites, ecommerce, nonprofit platforms, and experimental web apps.",
+      tech: "Tech stack of 1azarito — HTML, CSS, JavaScript, TypeScript, React, Next.js, Astro, Tailwind, WordPress, Node.js, Python, and more.",
+      contact: "Contact 1azarito — reach out via GitHub, email, or WhatsApp to discuss your next web project or collaboration.",
+    };
+
+    function updateMeta(id: string) {
+      if (!id) return;
+      const desc = descMap[id];
+      if (!desc) return;
+      const title = titleMap[id] ? `${siteName} | ${titleMap[id]}` : siteName;
+
+      document.title = title;
+
+      const metaDesc = document.querySelector('meta[name="description"]');
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+
+      if (metaDesc) metaDesc.setAttribute("content", desc);
+      if (ogDesc) ogDesc.setAttribute("content", desc);
+      if (twitterDesc) twitterDesc.setAttribute("content", desc);
+      if (ogTitle) ogTitle.setAttribute("content", title);
+      if (twitterTitle) twitterTitle.setAttribute("content", title);
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -211,9 +239,7 @@ const navItems: NavItem[] = [
             navLinks.forEach((link) => link.classList.remove("active"));
 
             const id = entry.target.getAttribute("id");
-            if (id && titleMap[id]) {
-              document.title = `${siteName} | ${titleMap[id]}`;
-            }
+            if (id) updateMeta(id);
 
             const desktopLink = document.querySelector(
               `#main-nav a[href="#${id}"]`,

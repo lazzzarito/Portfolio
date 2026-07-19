@@ -29,12 +29,21 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
 
     <title>{title}</title>
 
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://github.com" crossorigin />
+    <link rel="dns-prefetch" href="https://github.com" />
+
+    <!-- Preload hero image (LCP element) -->
+    <link rel="preload" as="image" href={ogImage} fetchpriority="high" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="1azarito | Portfolio" />
 
     <!-- Twitter Card -->
@@ -73,7 +82,7 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
       class="fixed bottom-8 right-4 md:right-8 z-10 p-0 rounded-full bg-background border border-white/10 shadow-2xl transition-all duration-500 translate-y-20 opacity-0 group flex items-center justify-center cursor-pointer"
       aria-label="Back to top"
     >
-      <svg class="w-14 h-14 -rotate-90">
+      <svg class="w-14 h-14 -rotate-90" aria-hidden="true">
         <circle cx="28" cy="28" r="24" fill="none" stroke="currentColor" stroke-width="3" class="text-white/10"></circle>
         <circle
           id="progress-circle"
@@ -88,7 +97,7 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
         ></circle>
       </svg>
       
-      <div class="absolute text-white group-hover:scale-110 transition-transform">
+      <div class="absolute text-white group-hover:scale-110 transition-transform" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
           <path d="M13.0001 7.82843V20H11.0001V7.82843L5.63614 13.1924L4.22192 11.7782L12.0001 4L19.7783 11.7782L18.3641 13.1924L13.0001 7.82843Z"></path>
         </svg>
@@ -97,20 +106,18 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
 
     <script>
       const container = document.getElementById('matrix-container');
-      const characters = "{}[]()<>/\=+*01;";
-      // const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@&%";
+      const characters = "{}[]()<>/\\=+*01;";
 
       function createLetter() {
         if (!container) return;
 
         const span = document.createElement('span');
         const char = characters[Math.floor(Math.random() * characters.length)];
-        // const color = colors[Math.floor(Math.random() * colors.length)];
         const color = "var(--color-textrain)";
         
         const left = Math.random() * 100; 
-        const duration = 4 + Math.random() * 8; // 4s to 10s
-        const size = 10 + Math.random() * 10; // 10px to 20px
+        const duration = 4 + Math.random() * 8;
+        const size = 10 + Math.random() * 10;
         
         span.innerText = char;
         span.className = 'falling-letter';
@@ -119,7 +126,6 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
         span.style.fontSize = `${size}px`;
         span.style.animationDuration = `${duration}s`;
         
-        // Add a stronger glow effect for better contrast
         span.style.textShadow = `0 0 8px ${color}, 0 0 20px rgba(255,255,255,0.12)`;
         
         container.appendChild(span);
@@ -129,12 +135,9 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
         }, duration * 1000);
       }
 
-
       if (window.innerWidth > 768) {
-        // Create letters more frequently for a denser rain effect
         setInterval(createLetter, 100);
       } else {
-        // CSS-animated rain for mobile (no continuous JS — lightweight)
         const mobileCount = 25;
         for (let i = 0; i < mobileCount; i++) {
           const span = document.createElement('span');
@@ -149,7 +152,7 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
           span.style.fontSize = `${10 + Math.random() * 10}px`;
           span.style.textShadow = `0 0 8px ${color}, 0 0 20px rgba(255,255,255,0.12)`;
           span.style.animationDuration = `${duration}s`;
-          span.style.animationDelay = `-${Math.random() * duration}s`; // start at random point
+          span.style.animationDelay = `-${Math.random() * duration}s`;
           span.style.animationIterationCount = 'infinite';
           
           container.appendChild(span);
@@ -159,20 +162,18 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
       // ** SCROLL TO TOP ** //
       const toTopBtn = document.getElementById('to-top');
       const progressCircle = document.getElementById('progress-circle');
-      const circumference = 150.796; // 2 * pi * 24
+      const circumference = 150.796;
       const arrowIcon = toTopBtn?.querySelector('.absolute');
 
       function handleScroll() {
         const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercentage = window.scrollY / scrollHeight;
         
-        // Update the Circle Progress
         const offset = circumference - (scrollPercentage * circumference);
         if (progressCircle) {
           progressCircle.style.strokeDashoffset = offset.toString();
         }
 
-        // Visibility Logic (Appear at 50%)
         if (scrollPercentage > 0.5) {
           toTopBtn?.classList.remove('translate-y-20', 'opacity-0');
           toTopBtn?.classList.add('translate-y-0', 'opacity-100');
@@ -181,7 +182,6 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
           toTopBtn?.classList.remove('translate-y-0', 'opacity-100');
         }
 
-        // Bounce Logic at 98%
         if (scrollPercentage > 0.98) {
           arrowIcon?.classList.add('animate-bounce-twice');
         } else {
@@ -191,22 +191,17 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
 
       window.addEventListener('scroll', handleScroll, { passive: true });
 
-      // toTopBtn?.addEventListener('click', () => {
-      //   window.scrollTo({ top: 0, behavior: 'smooth' });
-      // });
-
       toTopBtn?.addEventListener('click', () => {
       arrowIcon?.classList.add('launching');
 
       const startPosition = window.scrollY;
       const duration = 750;
       let startTime: number | null = null;
-      let requestID: number; // storing the ID here
+      let requestID: number;
 
       const stopAnimation = () => {
         cancelAnimationFrame(requestID);
         arrowIcon?.classList.remove('launching');
-        // Remove listeners once stopped
         window.removeEventListener('wheel', stopAnimation);
         window.removeEventListener('touchmove', stopAnimation);
       };
@@ -230,7 +225,6 @@ const ogImage = new URL(aboutImage.src, Astro.url).href;
         }
       }
 
-      // Listen for any user interruption
       window.addEventListener('wheel', stopAnimation, { once: true });
       window.addEventListener('touchmove', stopAnimation, { once: true });
 

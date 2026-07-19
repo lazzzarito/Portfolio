@@ -14,9 +14,22 @@ const optimizedImages = await Promise.all(
 const validImages = optimizedImages.filter(Boolean);
 
 const isSlider = validImages.length > 1;
+
+// Per-project JSON-LD structured data
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": project.title,
+  "description": project.description,
+  "url": project.link,
+  "keywords": project.tech.join(", "),
+  "about": project.category
+};
 ---
 
-<div class="project-card group relative bg-accent/5 border border-accent/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-500">
+<script type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+
+<div class="project-card group relative bg-accent/5 border border-accent/10 rounded-2xl overflow-hidden hover:border-accent/40 transition-all duration-500" itemscope itemtype="https://schema.org/CreativeWork">
   <div class="aspect-square overflow-hidden relative bg-background/50">
     <div class="absolute inset-0 bg-accent/10 group-hover:bg-transparent transition-colors z-10 pointer-events-none"></div>
     
@@ -28,6 +41,12 @@ const isSlider = validImages.length > 1;
               src={imgMetadata}
               alt={`${project.title}`}
               class={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 ${index === 0 ? "opacity-100 z-0" : "opacity-0 z-[-1]"}`}
+              width={600}
+              height={600}
+              loading="lazy"
+              decoding="async"
+              format="avif"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           ))
         ) : (
@@ -36,6 +55,10 @@ const isSlider = validImages.length > 1;
             src="/placeholder.jpeg"
             alt={`${project.title} placeholder`}
             class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+            width={600}
+            height={600}
+            loading="lazy"
+            decoding="async"
           />
         )
       }
@@ -43,8 +66,8 @@ const isSlider = validImages.length > 1;
     
     <div class="absolute top-3 right-3 flex gap-2 z-20">
       {project.platforms.map((p: string) => (
-        <div class="p-1.5 bg-background backdrop-blur-md rounded-lg border border-accent/10 text-maintext">
-          <Icon name={`mdi:${p}`} class="w-4 h-4" />
+        <div class="p-1.5 bg-background backdrop-blur-md rounded-lg border border-accent/10 text-maintext" title={`Available on ${p}`}>
+          <Icon name={`mdi:${p}`} class="w-4 h-4" aria-hidden="true" />
         </div>
       ))}
     </div>
@@ -53,14 +76,14 @@ const isSlider = validImages.length > 1;
   <div class="p-6 space-y-4">
     <div class="flex justify-between items-start">
       <div>
-        <span class="text-accent text-[10px] uppercase tracking-widest font-bold">{project.category}</span>
-        <h3 class="text-xl font-heading font-bold text-maintext mt-1">{project.title}</h3>
-      </div>        <a href={project.link} target="_blank" class="text-white/50 hover:text-white transition-colors">
+        <span class="text-accent text-[10px] uppercase tracking-widest font-bold" itemprop="about">{project.category}</span>
+        <h3 class="text-xl font-heading font-bold text-maintext mt-1" itemprop="name">{project.title}</h3>
+      </div>        <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-white transition-colors" itemprop="url" title={`View ${project.title} project`}>
           <Icon name="mdi:open-in-new" class="w-6 h-6" />
         </a>
     </div>
 
-    <p class="text-subtext text-sm font-body line-clamp-3">
+    <p class="text-subtext text-sm font-body line-clamp-3" itemprop="description">
       {project.description}
     </p>
 
